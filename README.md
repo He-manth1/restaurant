@@ -1,4 +1,4 @@
-# Restaurant website (Aurum Table)
+# Restaurant website (Ryaan's Table)
 
 Single-page frontend (HTML, CSS, vanilla JavaScript) and a Flask + MongoDB backend.
 

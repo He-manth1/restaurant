@@ -1,5 +1,5 @@
 /**
- * Aurum Table — frontend logic (no frameworks).
+ * Ryaan's Table — frontend logic (no frameworks).
  * Features:
  * - Mobile nav toggle
  * - Scroll reveal animations via IntersectionObserver

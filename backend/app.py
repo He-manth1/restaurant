@@ -1,5 +1,5 @@
 """
-Aurum Table — Flask backend (MongoDB only via PyMongo).
+Ryaan's Table — Flask backend (MongoDB only via PyMongo).
 Endpoints:
   - POST /order
   - POST /reviews
@@ -90,7 +90,7 @@ def root():
         return send_from_directory(FRONTEND_DIR, "index.html")
     return jsonify(
         {
-            "service": "Aurum Table API",
+            "service": "Ryaan's Table API",
             "docs": "Use GET /health, GET /reviews, POST /order, POST /reviews",
         }
     ), 200
