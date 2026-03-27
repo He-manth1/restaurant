@@ -19,12 +19,14 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 from pymongo import MongoClient
 from pymongo.errors import ConfigurationError
 
 BASE_DIR = Path(__file__).resolve().parent
+# Repo layout: ../frontend (sibling of backend/) — served in production so one URL hosts site + API.
+FRONTEND_DIR = (BASE_DIR.parent / "frontend").resolve()
 load_dotenv(BASE_DIR / ".env")
 
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
@@ -82,13 +84,32 @@ except Exception as e:
 
 @app.get("/")
 def root():
-    """Avoid 404 when opening the service base URL (e.g. Render dashboard / browser)."""
+    """Serve the marketing site at `/` when `frontend/` exists (e.g. Render single service)."""
+    index = FRONTEND_DIR / "index.html"
+    if index.is_file():
+        return send_from_directory(FRONTEND_DIR, "index.html")
     return jsonify(
         {
             "service": "Aurum Table API",
             "docs": "Use GET /health, GET /reviews, POST /order, POST /reviews",
         }
     ), 200
+
+
+@app.get("/style.css")
+def serve_style():
+    path = FRONTEND_DIR / "style.css"
+    if not path.is_file():
+        return error("Not found.", 404)
+    return send_from_directory(FRONTEND_DIR, "style.css")
+
+
+@app.get("/script.js")
+def serve_script():
+    path = FRONTEND_DIR / "script.js"
+    if not path.is_file():
+        return error("Not found.", 404)
+    return send_from_directory(FRONTEND_DIR, "script.js")
 
 
 @app.get("/health")
