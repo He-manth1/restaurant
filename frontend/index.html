@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aurum Table — Premium Dining</title>
+    <meta name="description" content="Aurum Table — a premium restaurant experience. Browse the menu, place an order, and leave a review." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header" id="home">
+        <nav class="nav">
+            <a class="brand" href="#home" aria-label="Aurum Table home">
+                <span class="brand-mark" aria-hidden="true">AT</span>
+                <span class="brand-text">
+                    <span class="brand-name">Aurum Table</span>
+                    <span class="brand-tagline">Premium Dining</span>
+                </span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#order" class="nav-link">Order</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-media" aria-hidden="true"></div>
+            <div class="hero-content container reveal">
+                <p class="eyebrow">Fine dining • handcrafted plates • warm service</p>
+                <h1 class="hero-title">Where rich flavors meet refined craft.</h1>
+                <p class="hero-subtitle">
+                    Seasonal ingredients, slow-simmered sauces, and a table that feels like a celebration—every time.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#menu">View Menu</a>
+                    <a class="btn btn-ghost" href="#order">Order Now</a>
+                </div>
+                <div class="hero-meta">
+                    <div class="meta-pill">
+                        <span class="meta-k">Hours</span>
+                        <span class="meta-v">Mon–Sun • 12:00–23:00</span>
+                    </div>
+                    <div class="meta-pill">
+                        <span class="meta-k">Location</span>
+                        <span class="meta-v">Downtown Avenue, City Center</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="menu">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title">Menu</h2>
+                    <p class="section-subtitle">Choose a category, then add your favorites to your order.</p>
+                </header>
+
+                <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+                    <button class="tab is-active" type="button" data-category="starters" role="tab" aria-selected="true">Starters</button>
+                    <button class="tab" type="button" data-category="mains" role="tab" aria-selected="false">Mains</button>
+                    <button class="tab" type="button" data-category="desserts" role="tab" aria-selected="false">Desserts</button>
+                    <button class="tab" type="button" data-category="all" role="tab" aria-selected="false">All</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Starters -->
+                    <article class="dish-card reveal" data-category="starters" data-name="Truffle Burrata" data-price="9.5">
+                        <img class="dish-img" alt="Truffle burrata on a plate" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Truffle Burrata</h3>
+                                <span class="dish-price">₹ 9.50</span>
+                            </div>
+                            <p class="dish-desc">Creamy burrata, shaved truffle, basil oil, warm sourdough.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="starters" data-name="Charred Corn Soup" data-price="6.0">
+                        <img class="dish-img" alt="Creamy corn soup" src="https://images.unsplash.com/photo-1543352634-99a5d32e4a2b?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Charred Corn Soup</h3>
+                                <span class="dish-price">₹ 6.00</span>
+                            </div>
+                            <p class="dish-desc">Smoky corn velouté, chili crisp, lime, micro herbs.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="starters" data-name="Citrus Prawn Ceviche" data-price="10.0">
+                        <img class="dish-img" alt="Ceviche with citrus and herbs" src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Citrus Prawn Ceviche</h3>
+                                <span class="dish-price">₹ 10.00</span>
+                            </div>
+                            <p class="dish-desc">Citrus cured prawns, avocado, pickled onion, tostada.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="starters" data-name="Crispy Polenta Bites" data-price="7.0">
+                        <img class="dish-img" alt="Crispy polenta bites with dip" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Crispy Polenta Bites</h3>
+                                <span class="dish-price">₹ 7.00</span>
+                            </div>
+                            <p class="dish-desc">Golden polenta, parmesan, roasted garlic aioli.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="starters" data-name="Garden Greens" data-price="5.5">
+                        <img class="dish-img" alt="Fresh salad bowl" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Garden Greens</h3>
+                                <span class="dish-price">₹ 5.50</span>
+                            </div>
+                            <p class="dish-desc">Baby greens, cucumber ribbon, citrus vinaigrette, seeds.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+
+                    <!-- Mains -->
+                    <article class="dish-card reveal" data-category="mains" data-name="Herb Roasted Salmon" data-price="18.0">
+                        <img class="dish-img" alt="Salmon fillet with herbs" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Herb Roasted Salmon</h3>
+                                <span class="dish-price">₹ 18.00</span>
+                            </div>
+                            <p class="dish-desc">Lemon beurre blanc, asparagus, confit cherry tomatoes.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="mains" data-name="Slow Braised Short Rib" data-price="22.0">
+                        <img class="dish-img" alt="Braised short rib with sauce" src="https://images.unsplash.com/photo-1604908554065-1123ea62d0c6?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Slow Braised Short Rib</h3>
+                                <span class="dish-price">₹ 22.00</span>
+                            </div>
+                            <p class="dish-desc">Red wine jus, silky mash, roasted carrots.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="mains" data-name="Wild Mushroom Risotto" data-price="16.0">
+                        <img class="dish-img" alt="Mushroom risotto" src="https://images.unsplash.com/photo-1604908176997-125f25cc500c?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Wild Mushroom Risotto</h3>
+                                <span class="dish-price">₹ 16.00</span>
+                            </div>
+                            <p class="dish-desc">Porcini, parmesan, thyme, truffle glaze (optional).</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="mains" data-name="Aurum Butter Chicken" data-price="15.5">
+                        <img class="dish-img" alt="Butter chicken with naan" src="https://images.unsplash.com/photo-1604909053192-8e8ce3dc03c5?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Aurum Butter Chicken</h3>
+                                <span class="dish-price">₹ 15.50</span>
+                            </div>
+                            <p class="dish-desc">Smoky tomato cream, kasuri methi, charred naan.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="mains" data-name="Saffron Veg Biryani" data-price="13.0">
+                        <img class="dish-img" alt="Saffron biryani bowl" src="https://images.unsplash.com/photo-1604908177453-7462950a6a2a?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Saffron Veg Biryani</h3>
+                                <span class="dish-price">₹ 13.00</span>
+                            </div>
+                            <p class="dish-desc">Aromatic basmati, garden vegetables, mint raita.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+
+                    <!-- Desserts -->
+                    <article class="dish-card reveal" data-category="desserts" data-name="Gold Crème Brûlée" data-price="8.0">
+                        <img class="dish-img" alt="Creme brulee dessert" src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Gold Crème Brûlée</h3>
+                                <span class="dish-price">₹ 8.00</span>
+                            </div>
+                            <p class="dish-desc">Vanilla custard, caramel crust, seasonal berries.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="desserts" data-name="Dark Chocolate Torte" data-price="9.0">
+                        <img class="dish-img" alt="Chocolate cake slice" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Dark Chocolate Torte</h3>
+                                <span class="dish-price">₹ 9.00</span>
+                            </div>
+                            <p class="dish-desc">Flourless torte, cocoa nibs, espresso cream.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="desserts" data-name="Pistachio Gelato" data-price="6.5">
+                        <img class="dish-img" alt="Gelato in a cup" src="https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Pistachio Gelato</h3>
+                                <span class="dish-price">₹ 6.50</span>
+                            </div>
+                            <p class="dish-desc">Slow-churned pistachio gelato, sea salt, crunch.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="desserts" data-name="Rose Milk Panna Cotta" data-price="7.5">
+                        <img class="dish-img" alt="Panna cotta dessert" src="https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Rose Milk Panna Cotta</h3>
+                                <span class="dish-price">₹ 7.50</span>
+                            </div>
+                            <p class="dish-desc">Rose-infused cream, raspberry coulis, toasted nuts.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                    <article class="dish-card reveal" data-category="desserts" data-name="Citrus Olive Oil Cake" data-price="7.0">
+                        <img class="dish-img" alt="Olive oil cake slice" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" loading="lazy" />
+                        <div class="dish-body">
+                            <div class="dish-top">
+                                <h3 class="dish-name">Citrus Olive Oil Cake</h3>
+                                <span class="dish-price">₹ 7.00</span>
+                            </div>
+                            <p class="dish-desc">Orange zest, extra virgin olive oil, whipped mascarpone.</p>
+                            <button class="btn btn-small" type="button" data-action="add-to-order">Add to Order</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="order">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title">Order</h2>
+                    <p class="section-subtitle">Your selections update instantly. Place the order when ready.</p>
+                </header>
+
+                <div class="order-layout">
+                    <div class="order-info reveal">
+                        <div class="panel">
+                            <h3 class="panel-title">Your details</h3>
+                            <form id="orderForm" class="form" autocomplete="on">
+                                <label class="field">
+                                    <span class="field-label">Name</span>
+                                    <input id="orderName" name="name" type="text" placeholder="e.g., Akash" required />
+                                </label>
+                                <label class="field">
+                                    <span class="field-label">Phone</span>
+                                    <input id="orderPhone" name="phone" type="tel" inputmode="tel" placeholder="e.g., 9876543210" required />
+                                </label>
+                                <button class="btn btn-primary" id="placeOrderBtn" type="submit">Place Order</button>
+                                <p class="form-hint">We’ll call to confirm within minutes.</p>
+                                <div class="status" id="orderStatus" role="status" aria-live="polite"></div>
+                            </form>
+                        </div>
+
+                        <div class="panel subtle">
+                            <h3 class="panel-title">How it works</h3>
+                            <ul class="bullets">
+                                <li>Add items from the menu.</li>
+                                <li>Adjust quantities in your order summary.</li>
+                                <li>Submit—your order is saved to our kitchen queue.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="order-summary reveal" aria-label="Order summary">
+                        <div class="panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title">Order summary</h3>
+                                <button class="link-btn" id="clearOrderBtn" type="button">Clear</button>
+                            </div>
+                            <div id="orderItems" class="order-items" aria-live="polite"></div>
+                            <div class="order-totals">
+                                <div class="totals-row">
+                                    <span>Subtotal</span>
+                                    <strong id="subtotalAmount">₹ 0.00</strong>
+                                </div>
+                                <p class="totals-note">Taxes/fees (if any) are confirmed on call.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="reviews">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title">Reviews</h2>
+                    <p class="section-subtitle">Real guests. Real feedback. Newest first.</p>
+                </header>
+
+                <div class="reviews-layout">
+                    <div class="reviews-feed">
+                        <div class="reviews-grid" id="reviewsGrid" aria-live="polite"></div>
+                        <div class="status" id="reviewsStatus" role="status" aria-live="polite"></div>
+                    </div>
+
+                    <div class="reviews-form reveal">
+                        <div class="panel">
+                            <h3 class="panel-title">Leave a review</h3>
+                            <form id="reviewForm" class="form">
+                                <label class="field">
+                                    <span class="field-label">Name</span>
+                                    <input id="reviewName" type="text" placeholder="Your name" required />
+                                </label>
+
+                                <div class="field">
+                                    <span class="field-label">Rating</span>
+                                    <div class="stars" id="starPicker" role="radiogroup" aria-label="Star rating">
+                                        <button class="star" type="button" data-rating="1" aria-label="1 star">★</button>
+                                        <button class="star" type="button" data-rating="2" aria-label="2 stars">★</button>
+                                        <button class="star" type="button" data-rating="3" aria-label="3 stars">★</button>
+                                        <button class="star" type="button" data-rating="4" aria-label="4 stars">★</button>
+                                        <button class="star" type="button" data-rating="5" aria-label="5 stars">★</button>
+                                    </div>
+                                    <input id="reviewRating" type="hidden" value="5" />
+                                </div>
+
+                                <label class="field">
+                                    <span class="field-label">Comment</span>
+                                    <textarea id="reviewComment" rows="4" placeholder="Tell us what you loved…" required></textarea>
+                                </label>
+
+                                <button class="btn btn-primary" type="submit">Submit Review</button>
+                                <div class="status" id="reviewSubmitStatus" role="status" aria-live="polite"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-brand">Aurum Table</div>
+                <p class="footer-text">Deep charcoal ambiance, golden accents, and a kitchen built on craft.</p>
+            </div>
+            <div>
+                <div class="footer-title">Address</div>
+                <p class="footer-text">22 Downtown Avenue<br />City Center, 000000</p>
+            </div>
+            <div>
+                <div class="footer-title">Hours</div>
+                <p class="footer-text">Mon–Sun: 12:00–23:00<br />Reservations recommended</p>
+            </div>
+            <div>
+                <div class="footer-title">Social</div>
+                <div class="footer-links">
+                    <a href="#home">Instagram</a>
+                    <a href="#home">Facebook</a>
+                    <a href="#home">X</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">© <span id="year"></span> Aurum Table. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
