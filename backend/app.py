@@ -80,6 +80,17 @@ except Exception as e:
     app.logger.exception("Failed to initialize MongoDB: %s", e)
 
 
+@app.get("/")
+def root():
+    """Avoid 404 when opening the service base URL (e.g. Render dashboard / browser)."""
+    return jsonify(
+        {
+            "service": "Aurum Table API",
+            "docs": "Use GET /health, GET /reviews, POST /order, POST /reviews",
+        }
+    ), 200
+
+
 @app.get("/health")
 def health():
     """Simple health check."""
